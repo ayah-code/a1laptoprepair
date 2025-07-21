@@ -22,8 +22,11 @@
           </ul>
         </nav>
         <nav class="main-nav">
+          <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            &#9776;
+          </button>
+          <a href="index.html" class="logo">A1 Laptop Repair</a>
             <ul class="nav-links">
-                <li class="logo"><a href="index.html">A1 Laptop Repair</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="products.html">Products</a></li>
@@ -33,11 +36,68 @@
         </nav>
   <main>
     <section>
-        <h1>Products</h1>
-        <p>A1 carries a wide range of new and used laptop parts, and if we don't have what you need in stock, we can order it for you.</p>
+      <h1>Products</h1>
+      <p>A1 carries a wide range of new and used laptop parts, and if we don't have what you need in stock, we can order it for you!</p>
     </section>
+    
+    <div class="categories">
+      <button class="active" data-category="all">All</button>
+      <button data-category="keyboard">Keyboards</button>
+      <button data-category="cable">Cables</button>
+      <button data-category="charger">Chargers</button>
+      <button data-category="mouse">Mice</button>
+      <button data-category="monitor">Monitors</button>
+    </div>
+    <div class="product-grid">
+      <div class="product" data-category="keyboard">
+        <img src="images/mechanical_keyboards.jpg" alt="Mechanical Keyboard">
+        <h3>Mechanical Keyboard</h3>
+        <p>$89.99</p>
+      </div>
 
-    <div class="divider"></div>
+      <div class="product" data-category="cable">
+        <img src="images/hdmi_cable.jpg" alt="HDMI Cable">
+        <h3>HDMI Cable (6ft)</h3>
+        <p>$12.99</p>
+      </div>
+
+      <div class="product" data-category="charger">
+        <img src="images/usbc.jpg" alt="USB-C Charger">
+        <h3>65W USB-C Charger</h3>
+        <p>$39.99</p>
+      </div>
+
+      <div class="product" data-category="mouse">
+        <img src="images/wireless_mouse.jpg" alt="Wireless Mouse">
+        <h3>Wireless Mouse</h3>
+        <p>$29.99</p>
+      </div>
+
+      <div class="product" data-category="monitor">
+        <img src="images/hd_monitor.jpg" alt="Monitor">
+        <h3>24&quot; Full HD Monitor</h3>
+        <p>$149.99</p>
+      </div>
+
+      <div class="product" data-category="cable">
+        <img src="images/ethernet_cable.jpg" alt="Ethernet Cable">
+        <h3>Ethernet Cable (10ft)</h3>
+        <p>$9.99</p>
+      </div>
+
+      <div class="product" data-category="keyboard">
+        <img src="images/RGB_keyboard.jpg" alt="RGB Keyboard">
+        <h3>RGB Gaming Keyboard</h3>
+        <p>$69.99</p>
+      </div>
+
+      <div class="product" data-category="charger">
+        <img src="images/acer_charger.jpg" alt="MacBook Charger">
+        <h3>Acer Gaming 180W Charger</h3>
+        <p>$79.99</p>
+      </div>
+    </div>
+    <a href="tel:+19024690162" class="red-button">Call Now</a>
   </main>
 
   <footer>
@@ -51,7 +111,6 @@
     </div>
   </footer>
   
-
   <script src="js/script.js"></script>
 </body>
 </html>
