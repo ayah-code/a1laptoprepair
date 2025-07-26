@@ -40,7 +40,7 @@ header {
   background-color: #222;
   color: #eee;
   font-size: 0.9rem;
-  padding: 8px 20px;
+  padding: 10px 20px;
   text-align: center;
   position: sticky;
   top: 0;
@@ -71,14 +71,16 @@ header {
 
 /* Main Nav */
 .main-nav {
-  position: relative;
-  background-color: #dc3545;
-  padding: 15px 20px;
+  position: sticky;
+  top: 38px;
+  background-color: #b82938;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000;
+  z-index: 999;
 }
+
 
 .logo {
   color: white;
@@ -154,7 +156,7 @@ main section p {
 
 /* Gradient Border Section */
 .gradient-border-wrapper {
-  background: linear-gradient(90deg, #dc3545, #ff7b7b);
+  background: linear-gradient(90deg, #b82938, #ff7b7b);
   padding: 4px;
   border-radius: 12px;
   max-width: 800px;
@@ -216,7 +218,7 @@ main section p {
 
 .service-box {
   background-color: #fff;
-  border: 2px solid #dc3545;
+  border: 2px solid #b82938;
   border-radius: 10px;
   padding: 40px 20px;
   font-size: 1.1rem;
@@ -233,7 +235,7 @@ main section p {
 }
 
 .service-box:hover {
-  background-color: #dc3545;
+  background-color: #b82938;
   color: #ffc107;
   font-size: 1.3rem;
   transform: translateY(-3px);
@@ -261,7 +263,7 @@ main section p {
 }
 
 .stacked-service-box:hover {
-  background-color: #dc3545;
+  background-color: #b82938;
   color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
@@ -302,7 +304,7 @@ main section p {
 /* Divider */
 .divider {
   height: 2px;
-  background-color: #dc3545;
+  background-color: #b82938;
   border: none;
   margin: 40px 0;
   width: 100%;
@@ -316,7 +318,7 @@ main section p {
 }
 
 .red-button {
-  background-color: #dc3545;
+  background-color: #b82938;
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
@@ -334,7 +336,7 @@ main section p {
 
 .red-button:hover,
 .red-button:focus {
-  background-color: #b52b36;
+  background-color: #b82938;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   outline: none;
@@ -411,13 +413,11 @@ main section p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Section Titles */
 .section-title {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: #b40000;
+  color: #b82938;
 }
 
 .section-description {
@@ -516,6 +516,7 @@ main section p {
   background-color: #fafafa;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .product-grid {
@@ -544,6 +545,9 @@ main section p {
   color: #2b8a3e;
   font-weight: bold;
   margin: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 
@@ -654,7 +658,7 @@ footer a:focus {
 
   .service-box {
     background-color: #fff;
-    border: 2px solid #dc3545;
+    border: 2px solid #b82938;
     border-radius: 10px;
     padding: 10px 10px;
     font-size: 1.1rem;
@@ -704,7 +708,7 @@ footer a:focus {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #dc3545;  /* solid bg so content doesn't show through */
+    background-color: #b82938;  /* solid bg so content doesn't show through */
     padding: 10px 20px;
     border-radius: 0 0 8px 8px;
     display: none;
@@ -731,4 +735,63 @@ footer a:focus {
     line-height: 1.4;
   }
 
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffc107;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.red-button {
+  animation: none;
+  transition: transform 0.2s ease;
+}
+
+.red-button:hover {
+  transform: scale(1.1) rotate(1deg);
+}
+
+.nav-open .nav-links {
+  display: block;
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
